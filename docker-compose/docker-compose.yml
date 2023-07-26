@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=ackee_articles_docker
+      - POSTGRES_USER=ackee_articles_docker
+      - POSTGRES_PASSWORD=ackee_articles_docker
+    ports:
+      - 5432:5432
+    volumes:
+      - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
